@@ -1,1 +1,1 @@
-Higher level programming projects in Python.
+Python import and modules project
