@@ -1,17 +1,14 @@
 #!/usr/bin/python3
-"""This module defines the Base class for all other classes."""
+"""Base class for all models"""
+
 
 class Base:
-    """Base class for all future classes in this project."""
+    """This class manages id attribute for all future classes"""
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Initialize Base instance.
-
-        Args:
-            id (int): The id of the instance.
-        """
+        """Initialize Base"""
         if id is not None:
             self.id = id
         else:
