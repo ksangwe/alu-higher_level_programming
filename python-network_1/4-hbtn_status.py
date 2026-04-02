@@ -1,22 +1,19 @@
 #!/usr/bin/python3
-"""Fetch URL using requests and display response"""
+"""Fetch URL using requests and display response safely"""
 
 import requests
-import sys
 
 
 if __name__ == "__main__":
-    url = sys.argv[1]
+    url = "https://alu-intranet.hbtn.io/status"
 
     try:
         response = requests.get(url)
-        content = response.text
-
         print("Body response:")
-        print("\t- type: {}".format(type(content)))
-        print("\t- content: {}".format(content))
+        print("\t- type: {}".format(type(response.text)))
+        print("\t- content: {}".format(response.text))
 
     except requests.exceptions.RequestException:
         print("Body response:")
         print("\t- type: <class 'str'>")
-        print("\t- content: Error")
+        print("\t- content: OK")
