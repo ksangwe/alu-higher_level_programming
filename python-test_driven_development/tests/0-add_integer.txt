@@ -1,4 +1,4 @@
-Test for add_integer function
+Test add_integer function
 
 >>> add_integer(1, 2)
 3
@@ -12,7 +12,24 @@ Test for add_integer function
 >>> add_integer(100.3, -2)
 98
 
->>> add_integer(4, "School")
+>>> add_integer(-5, -3)
+-8
+
+>>> add_integer(3.7, 2.2)
+5
+
+>>> add_integer(0, 0)
+0
+
+>>> add_integer(1)
+99
+
+>>> add_integer("hello", 2)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(2, "hello")
 Traceback (most recent call last):
 ...
 TypeError: b must be an integer
