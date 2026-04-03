@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Lists all states from the database hbtn_0e_0_usa
-where name matches the argument
+where name matches the argument (case-sensitive)
 """
 
 import MySQLdb
@@ -25,9 +25,9 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    # Use format but safely
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cur.execute(query, (state_searched,))
+    # Use format and BINARY for case-sensitive search
+    query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC".format(state_searched)
+    cur.execute(query)
 
     rows = cur.fetchall()
     for row in rows:
