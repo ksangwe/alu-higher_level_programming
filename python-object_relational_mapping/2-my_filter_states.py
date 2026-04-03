@@ -13,7 +13,6 @@ if __name__ == "__main__":
     db_name = sys.argv[3]
     state_searched = sys.argv[4]
 
-    # Connect to database
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -25,11 +24,14 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    # Use format and BINARY for case-sensitive search
-    query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC".format(state_searched)
-    cur.execute(query)
+    query = (
+        "SELECT * FROM states WHERE BINARY name = '{}' "
+        "ORDER BY id ASC"
+    ).format(state_searched)
 
+    cur.execute(query)
     rows = cur.fetchall()
+
     for row in rows:
         print(row)
 
