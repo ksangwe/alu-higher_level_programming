@@ -1,89 +1,42 @@
 #!/usr/bin/python3
-"""Rectangle class"""
-
+"""Rectangle module"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Rectangle that inherits from Base"""
+    """Rectangle class inheriting from Base"""
 
-    def __init__(self, width, height, *args):
-        """Initialize Rectangle with flexible arguments"""
-
-        # Default values
-        x = 0
-        y = 0
-        id = None
-
-        if len(args) == 1:
-            # Could be id OR x depending on type
-            if isinstance(args[0], int):
-                id = args[0]
-        elif len(args) == 2:
-            x, y = args
-        elif len(args) == 3:
-            id, x, y = args
-
-        super().__init__(id)
-
+    def __init__(self, width, height, x=0, y=0, id=None):
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
-    # WIDTH
-    @property
-    def width(self):
-        return self.__width
+    def to_dictionary(self):
+        """Return dictionary representation of Rectangle"""
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
 
-    @width.setter
-    def width(self, value):
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
-        self.__width = value
+    def update(self, *args, **kwargs):
+        """Assign attributes using args or kwargs"""
+        attrs = ['id', 'width', 'height', 'x', 'y']
+        # Use args first
+        for i, val in enumerate(args):
+            if i < len(attrs):
+                setattr(self, attrs[i], val)
+        # If no args, use kwargs
+        if not args:
+            for key, val in kwargs.items():
+                if key in attrs:
+                    setattr(self, key, val)
 
-    # HEIGHT
-    @property
-    def height(self):
-        return self.__height
-
-    @height.setter
-    def height(self, value):
-        if type(value) is not int:
-            raise TypeError("height must be an integer")
-        if value <= 0:
-            raise ValueError("height must be > 0")
-        self.__height = value
-
-    # X
-    @property
-    def x(self):
-        return self.__x
-
-    @x.setter
-    def x(self, value):
-        if type(value) is not int:
-            raise TypeError("x must be an integer")
-        if value < 0:
-            raise ValueError("x must be >= 0")
-        self.__x = value
-
-    # Y
-    @property
-    def y(self):
-        return self.__y
-
-    @y.setter
-    def y(self, value):
-        if type(value) is not int:
-            raise TypeError("y must be an integer")
-        if value < 0:
-            raise ValueError("y must be >= 0")
-        self.__y = value
-
-    # AREA METHOD
-    def area(self):
-        """Returns area of the rectangle"""
-        return self.width * self.height
+    def __str__(self):
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height
+        )
