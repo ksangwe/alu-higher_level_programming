@@ -26,9 +26,9 @@ if __name__ == "__main__":
 
     # 🔥 ONLY CHANGE FROM TASK 0
     cur.execute(
-    "SELECT * FROM states WHERE name LIKE BINARY 'N%' "
-    "ORDER BY id ASC"
-)
+        "SELECT * FROM states WHERE name LIKE BINARY 'N%' "
+        "ORDER BY id ASC"
+    )
 
     rows = cur.fetchall()
     for row in rows:
