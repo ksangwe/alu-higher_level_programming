@@ -25,7 +25,7 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # 🔥 ONLY CHANGE FROM TASK 0
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
 
     rows = cur.fetchall()
     for row in rows:
