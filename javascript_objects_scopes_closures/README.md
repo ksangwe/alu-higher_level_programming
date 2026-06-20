@@ -14,3 +14,4 @@ prototypes, and inheritance using ES6 class notation.
 | `4-rectangle.js` | A `Rectangle` class with `rotate()` and `double()` methods. |
 | `5-square.js` | A `Square` class that inherits from `Rectangle` using `extends` and `super()`. |
 | `6-square.js` | A `Square` class with a `charPrint(c)` method that prints using character `c` (defaults to `X`). |
+| `7-occurrences.js` | A function `nbOccurences(list, searchElement)` that counts occurrences in a list. |
