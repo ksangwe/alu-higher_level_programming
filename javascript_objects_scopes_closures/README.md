@@ -13,3 +13,4 @@ prototypes, and inheritance using ES6 class notation.
 | `3-rectangle.js` | A `Rectangle` class with a `print()` method that draws the rectangle using `X`. |
 | `4-rectangle.js` | A `Rectangle` class with `rotate()` and `double()` methods. |
 | `5-square.js` | A `Square` class that inherits from `Rectangle` using `extends` and `super()`. |
+| `6-square.js` | A `Square` class with a `charPrint(c)` method that prints using character `c` (defaults to `X`). |
