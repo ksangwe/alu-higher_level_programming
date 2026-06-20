@@ -12,3 +12,4 @@ prototypes, and inheritance using ES6 class notation.
 | `2-rectangle.js` | A `Rectangle` class that creates an empty object when width or height is not a positive integer. |
 | `3-rectangle.js` | A `Rectangle` class with a `print()` method that draws the rectangle using `X`. |
 | `4-rectangle.js` | A `Rectangle` class with `rotate()` and `double()` methods. |
+| `5-square.js` | A `Square` class that inherits from `Rectangle` using `extends` and `super()`. |
