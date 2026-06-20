@@ -15,3 +15,4 @@ prototypes, and inheritance using ES6 class notation.
 | `5-square.js` | A `Square` class that inherits from `Rectangle` using `extends` and `super()`. |
 | `6-square.js` | A `Square` class with a `charPrint(c)` method that prints using character `c` (defaults to `X`). |
 | `7-occurrences.js` | A function `nbOccurences(list, searchElement)` that counts occurrences in a list. |
+| `8-esrever.js` | A function `esrever(list)` that reverses a list without using the built-in `reverse`. |
