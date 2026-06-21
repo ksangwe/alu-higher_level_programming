@@ -17,3 +17,4 @@ prototypes, and inheritance using ES6 class notation.
 | `7-occurrences.js` | A function `nbOccurences(list, searchElement)` that counts occurrences in a list. |
 | `8-esrever.js` | A function `esrever(list)` that reverses a list without using the built-in `reverse`. |
 | `9-logme.js` | A function `logMe(item)` that uses a closure to track and print the number of arguments printed. |
+| `10-converter.js` | A function `converter(base)` that converts a number from base 10 to another base, using a closure and no new variables. |
