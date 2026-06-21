@@ -16,3 +16,4 @@ prototypes, and inheritance using ES6 class notation.
 | `6-square.js` | A `Square` class with a `charPrint(c)` method that prints using character `c` (defaults to `X`). |
 | `7-occurrences.js` | A function `nbOccurences(list, searchElement)` that counts occurrences in a list. |
 | `8-esrever.js` | A function `esrever(list)` that reverses a list without using the built-in `reverse`. |
+| `9-logme.js` | A function `logMe(item)` that uses a closure to track and print the number of arguments printed. |
