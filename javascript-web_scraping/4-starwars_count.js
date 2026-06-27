@@ -2,7 +2,6 @@
 const request = require('request');
 
 const url = process.argv[2];
-const wedge = 'https://swapi-api.alx-tools.com/api/people/18/';
 
 request(url, function (error, response, body) {
   if (error) {
@@ -12,8 +11,11 @@ request(url, function (error, response, body) {
   const films = JSON.parse(body).results;
   let count = 0;
   for (const film of films) {
-    if (film.characters.includes(wedge)) {
-      count++;
+    for (const character of film.characters) {
+      if (character.endsWith('/people/18/')) {
+        count++;
+        break;
+      }
     }
   }
   console.log(count);
