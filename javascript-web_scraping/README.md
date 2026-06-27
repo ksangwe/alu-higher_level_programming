@@ -13,3 +13,4 @@ and using the `request` module to fetch and scrape data from APIs.
 | `3-starwars_title.js` | Prints the title of a Star Wars movie by its ID using the Star Wars API. |
 | `4-starwars_count.js` | Prints the number of movies featuring Wedge Antilles (character ID 18). |
 | `5-request_store.js` | Gets the contents of a webpage and stores it in a file in utf-8. |
+| `6-completed_tasks.js` | Computes the number of completed tasks by user ID from an API. |
